@@ -59,8 +59,7 @@ def gerar_matrizes_produto(m1, n1, m2, n2, n = 10):
         trans_B = transposta(B)
         prod = []
         for row in A:
-            aux = []
-            
+            aux = [] 
             for i in range(m1):
                 a = 0
                 for j in range(m2):

@@ -1,0 +1,68 @@
+Data Hora:2021-11-22 18:47:19.319307
+
+Timer unit: 1e-07 s
+
+Total time: 0.165015 s
+File: C:\Users\012019631\Documents\teste\matrizes\gerar_matrizes.py
+Function: gerar_matrizes_produto at line 44
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    44                                           @profile
+    45                                           def gerar_matrizes_produto(m1, n1, m2, n2, n = 10):
+    46         1       1047.0   1047.0      0.1      if n1 == m2:
+    47         1        205.0    205.0      0.0          import random
+    48                                           
+    49         1        446.0    446.0      0.0          A = []
+    50                                           
+    51         3        581.0    193.7      0.0          for i in range(m1):
+    52         2       2884.0   1442.0      0.2              A.append([random.randint(0, n) for i in range(n1)])
+    53                                           
+    54         1         29.0     29.0      0.0          B = []
+    55                                           
+    56         5        462.0     92.4      0.0          for i in range(m2):
+    57         4       4686.0   1171.5      0.3              B.append([random.randint(0, n) for i in range(n2)])
+    58                                           
+    59         1        582.0    582.0      0.0          trans_B = transposta(B)
+    60         1         42.0     42.0      0.0          prod = []
+    61         3        110.0     36.7      0.0          for row in A:
+    62         2         72.0     36.0      0.0              aux = []
+    63                                                       
+    64         6        395.0     65.8      0.0              for i in range(m1):
+    65         4        150.0     37.5      0.0                  a = 0
+    66        20       1002.0     50.1      0.1                  for j in range(m2):
+    67        16        713.0     44.6      0.0                      a += row[j]*trans_B[i][j]
+    68         4        461.0    115.2      0.0                  aux.append(a)
+    69         2         79.0     39.5      0.0              prod.append(aux)
+    70                                           
+    71         1     583293.0 583293.0     35.3          imprime_matriz('A',A)
+    72         1     570868.0 570868.0     34.6          imprime_matriz('B',B)
+    73         1     481889.0 481889.0     29.2          imprime_matriz('Produto', prod)
+    74         1        155.0    155.0      0.0          return A, B, prod
+    75                                               else:
+    76                                                   print('O numero de colunas (n1) da matriz A deve ser igual ao numero de linhas (n2) da matriz B')
+    77                                                   sys.exit()
+
+Total time: 0 s
+File: C:\Users\012019631\Documents\teste\matrizes\gerar_matrizes.py
+Function: gerar_matrizes_prod_np at line 81
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    81                                           @profile
+    82                                           def gerar_matrizes_prod_np(m1, n1, m2, n2, n = 10):   
+    83                                               if n1 == m2:
+    84                                                   import numpy as np
+    85                                           
+    86                                                   A = np.random.randint(n, size=(m1,n1))
+    87                                                   B = np.random.randint(n, size=(m2,n2))
+    88                                           
+    89                                                   prod = np.dot(A, B)
+    90                                           
+    91                                                   imprime_matriz('A',A.tolist(), arq='matrizes/arquivos_saida_matrizes/matrizes_numpy.txt')
+    92                                                   imprime_matriz('B',B.tolist(), arq='matrizes/arquivos_saida_matrizes/matrizes_numpy.txt')
+    93                                                   imprime_matriz('Produto', prod.tolist(), arq='matrizes/arquivos_saida_matrizes/matrizes_numpy.txt')
+    94                                                   return A, B, prod
+    95                                               else:
+    96                                                   print('O numero de colunas (n1) da matriz A deve ser igual ao numero de linhas (n2) da matriz B')
+    97                                                   sys.exit()

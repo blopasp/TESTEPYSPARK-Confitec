@@ -9,7 +9,7 @@ stdout_trap = StringIO()
 # funcao para criar arquivo de saida txt
 def matrizes(nome = 'matrizes/arquivos_saida_matrizes/matrizes.txt'):
     with open(nome, 'w') as m:
-        m.write('Data Hora:'+str(datetime.now()))
+        m.write('Data Hora: '+str(datetime.now()))
         m.write('\n\nMatrizes geradas\n\n')
 
 # funcao que imprime em um arquivo txt o tempo total de execucao de cada funcao
@@ -20,7 +20,7 @@ def desempenho(stdout_trap = stdout_trap, arquivo = 'matrizes/arquivos_saida_mat
     output = output.rstrip()
 
     with open(arquivo, 'w') as des:
-        des.write('Data Hora:'+str(datetime.now())+'\n\n')
+        des.write('Data Hora: '+str(datetime.now())+'\n\n')
         des.write(output)
 
 # funcao para transpor uma planilha

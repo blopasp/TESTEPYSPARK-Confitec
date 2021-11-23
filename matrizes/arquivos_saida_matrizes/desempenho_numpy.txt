@@ -1,4 +1,4 @@
-Data Hora:2021-11-22 21:18:17.863739
+Data Hora: 2021-11-22 21:26:27.056887
 
 Timer unit: 1e-07 s
 
@@ -41,7 +41,7 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
     74                                                   print('O numero de colunas (n1) da matriz A deve ser igual ao numero de linhas (n2) da matriz B')
     75                                                   sys.exit()
 
-Total time: 0.73833 s
+Total time: 0.750939 s
 File: c:\Users\012019631\Documents\TESTEPYSPARK-Confitec\matrizes\gerar_matrizes.py
 Function: gerar_matrizes_prod_np at line 79
 
@@ -49,18 +49,18 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
 ==============================================================
     79                                           @profile
     80                                           def gerar_matrizes_prod_np(m1, n1, m2, n2, n = 10):   
-    81         1        101.0    101.0      0.0      if n1 == m2:
-    82         1    7015794.0 7015794.0     95.0          import numpy as np
+    81         1         78.0     78.0      0.0      if n1 == m2:
+    82         1    7011599.0 7011599.0     93.4          import numpy as np
     83                                           
-    84         1       1890.0   1890.0      0.0          A = np.random.randint(n, size=(m1,n1))
-    85         1        542.0    542.0      0.0          B = np.random.randint(n, size=(m2,n2))
+    84         1       1488.0   1488.0      0.0          A = np.random.randint(n, size=(m1,n1))
+    85         1        590.0    590.0      0.0          B = np.random.randint(n, size=(m2,n2))
     86                                           
-    87         1        231.0    231.0      0.0          prod = np.dot(A, B)
+    87         1        268.0    268.0      0.0          prod = np.dot(A, B)
     88                                           
-    89         1      38773.0  38773.0      0.5          imprime_matriz('A',A.tolist(), arq='matrizes/arquivos_saida_matrizes/matrizes_numpy.txt')
-    90         1     160393.0 160393.0      2.2          imprime_matriz('B',B.tolist(), arq='matrizes/arquivos_saida_matrizes/matrizes_numpy.txt')
-    91         1     165541.0 165541.0      2.2          imprime_matriz('Produto', prod.tolist(), arq='matrizes/arquivos_saida_matrizes/matrizes_numpy.txt')
-    92         1         39.0     39.0      0.0          return A, B, prod
+    89         1     137673.0 137673.0      1.8          imprime_matriz('A',A.tolist(), arq='matrizes/arquivos_saida_matrizes/matrizes_numpy.txt')
+    90         1     178849.0 178849.0      2.4          imprime_matriz('B',B.tolist(), arq='matrizes/arquivos_saida_matrizes/matrizes_numpy.txt')
+    91         1     178812.0 178812.0      2.4          imprime_matriz('Produto', prod.tolist(), arq='matrizes/arquivos_saida_matrizes/matrizes_numpy.txt')
+    92         1         36.0     36.0      0.0          return A, B, prod
     93                                               else:
     94                                                   print('O numero de colunas (n1) da matriz A deve ser igual ao numero de linhas (n2) da matriz B')
     95                                                   sys.exit()

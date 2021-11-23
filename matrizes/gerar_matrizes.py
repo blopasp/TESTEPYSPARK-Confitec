@@ -59,20 +59,11 @@ def gerar_matrizes_produto(m1, n1, m2, n2, n = 10):
         trans_B = transposta(B)
         prod = []
         for row in A:
-<<<<<<< HEAD
             aux = []
             
             for rowt in trans_B:
                 elem = sum([row[i]*rowt[i] for i in range(len(row))])
                 aux.append(elem)
-=======
-            aux = [] 
-            for i in range(m1):
-                a = 0
-                for j in range(m2):
-                    a += row[j]*trans_B[i][j]
-                aux.append(a)
->>>>>>> e6b299bcd95fbba21c58ea8977c5f1871eeb538c
             prod.append(aux)
 
         imprime_matriz('A',A)

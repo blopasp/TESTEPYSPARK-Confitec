@@ -49,23 +49,21 @@ def gerar_matrizes_produto(m1, n1, m2, n2, n = 10):
         A = []
 
         for i in range(m1):
-            A.append([random.randint(0, n) for i in range(n1)])
+            A.append([random.randint(0, n) for j in range(n1)])
 
         B = []
 
         for i in range(m2):
-            B.append([random.randint(0, n) for i in range(n2)])
+            B.append([random.randint(0, n) for j in range(n2)])
 
         trans_B = transposta(B)
         prod = []
         for row in A:
             aux = []
             
-            for i in range(m1):
-                a = 0
-                for j in range(m2):
-                    a += row[j]*trans_B[i][j]
-                aux.append(a)
+            for rowt in trans_B:
+                elem = sum([row[i]*rowt[i] for i in range(len(row))])
+                aux.append(elem)
             prod.append(aux)
 
         imprime_matriz('A',A)

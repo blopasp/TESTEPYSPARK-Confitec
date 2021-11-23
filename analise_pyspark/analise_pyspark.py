@@ -1,4 +1,3 @@
-from typing import Mapping
 from pyspark.sql import SparkSession, functions as f
 
 # funcao para traducao das colunas
